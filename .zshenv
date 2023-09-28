@@ -82,3 +82,13 @@ alias l='exa --icons'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+
+hr() {
+  printf "-%.0s" {1..$1}
+}
+
+title() {
+  hr 20 
+  echo -n " $1 "
+  hr $(($(expr length $1) - 60))
+}
