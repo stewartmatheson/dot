@@ -17,6 +17,7 @@ bindkey -e
 PROMPT="[ %~ ] "
 # Set editor. Some apps use this including git
 export EDITOR=nvim
+export PAGER="most"
 
 
 #-------------------- Paths ----------------------------------------------------
