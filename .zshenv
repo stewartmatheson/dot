@@ -38,7 +38,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 
-#-------------------- ZSH Extentions -------------------------------------------
+#-------------------- ZSH Extensions -------------------------------------------
 # Auto suggestions from https://github.com/zsh-users/zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # FZF which has be installed via apt as provided key bindings for us
@@ -64,10 +64,11 @@ hr() {
 }
 
 title() {
-  echo -n "#"
+  echo -n "# "
   hr 20 
   echo -n " $1 "
-  hr $(($(expr length $1) - 55))
+  hr $(($(expr length $1) - 54))
+  echo ""
 }
 
 # A function that will kill a process based on a port number
@@ -80,8 +81,8 @@ kp() {
 zc () {
   pushd "$HOME"
     $EDITOR .zshenv
-    source .zshenv
   popd
+  exec zsh
 }
 
 # A handy function for editing the nvim configuration
