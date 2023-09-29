@@ -74,19 +74,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 
 
-#-------------------- Functions ------------------------------------------------
-hr() {
-  printf "-%.0s" {1..$1}
-}
-
-title() {
-  echo -n "# "
-  hr 20 
-  echo -n " $1 "
-  hr $(($(expr length $1) - 54))
-  echo ""
-}
-
+# -------------------- Alias Functions -----------------------------------------
 # A function that will kill a process based on a port number
 kp() {
   local port_number=$1
@@ -106,6 +94,23 @@ nc () {
   pushd "$HOME/.config/nvim"
     nvim
   popd
+}
+
+
+
+# -------------------- Output Functions ----------------------------------------
+# A set of fucntions that output things. Handy for snippets et al.
+title() {
+  echo -n "# "
+  hr 20 
+  echo -n " $1 "
+  hr $(($(expr length $1) - 54))
+  echo ""
+}
+
+# Output a line made up of - with the amount
+hr() {
+  printf "-%.0s" {1..$1}
 }
 
 # Function to add a prefix to each line of piped input
