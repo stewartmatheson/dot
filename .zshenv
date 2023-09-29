@@ -37,6 +37,7 @@ PROMPT='[ %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f] '
 
 
 #-------------------- Paths ----------------------------------------------------
+# TODO : We should not manage paths here. We need to use native package managers
 export PATH=$PATH:/home/stewart/code/python/install/3.11.5/bin
 export PATH=$PATH:/home/stewart/code/ruby/install/3.2.2/bin
 export PATH=$PATH:/home/stewart/code/nvim/install/0.9.2/bin
@@ -45,6 +46,7 @@ export PATH=$PATH:/home/stewart/code/php/install/8.2.10/bin
 export PATH=$PATH:/home/stewart/code/php/bin
 export PATH=$PATH:/home/stewart/code/mysql/install/8.1.0/bin
 export PATH=$PATH:/home/stewart/code/zellij/bin
+export PATH=$PATH:/home/stewart/code/dot/scripts
 export MANPATH=$MANPATH:/home/stewart/code/php/install/8.2.10/php/man
 export MANPATH=$MANPATH:/home/stewart/code/mysql/install/8.1.0/man
 # Use NVM from https://github.com/nvm-sh/nvm
