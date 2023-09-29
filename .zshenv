@@ -20,10 +20,12 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 
 
+
 #-------------------- Settings -------------------------------------------------
 # Set editor. Some apps use this including git
 export EDITOR=nvim
 export PAGER="most"
+
 
 
 # -------------------- Prompt --------------------------------------------------
@@ -94,7 +96,7 @@ zc () {
 # A handy function for editing the nvim configuration
 nc () {
   pushd "$HOME/.config/nvim"
-    nvim
+    nvim init.lua
   popd
 }
 
