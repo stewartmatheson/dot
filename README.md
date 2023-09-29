@@ -1,6 +1,16 @@
 # Dot Files
 
-Based somewhat on rwxrob's dot files and ideas around note taking. Check him out on twitch https://www.twitch.tv/rwxrob. The github repo for his dotfiles is here and well worth a look https://github.com/rwxrob/dot. One key idea I'm borrowing is the setup script. First each part of of the setup provides its own setup file and second the setup links in to the home dir.
+These are my personal dotfiles somewhat based on rwxrob's dot files.  Check him 
+out on twitch https://www.twitch.tv/rwxrob. The github repo for his dotfiles 
+is here and well worth a look https://github.com/rwxrob/dot. This repo is 
+intended to function as a stand alone project that is able to configure 
+a complete terminal environment. Each subfolder of the configuration implements
+a setup file that is responsible for putting file configurations in their 
+correct places.
+
+## Usage 
+
+Run setup. 
 
 ## Prereqs
  * zsh

@@ -1,4 +1,5 @@
 #!/bin/bash
 
 ln -s ${PWD}/.zshenv ${HOME}/.zshenv
+ln -s ${PWD}/nvim ${HOME}/.config/nvim
 
