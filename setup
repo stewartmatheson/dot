@@ -6,6 +6,7 @@ ln -sf "$PWD/.zsh" "$HOME/.zsh"
 ln -sf "$PWD/nvim" "$HOME/.config/nvim"
 ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$PWD/tmux" "$HOME/.tmux"
+ln -sf "$PWD/rbenv" "$HOME/.rbenv"
 
 touch ${HOME}/.hushlogin
 

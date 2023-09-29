@@ -41,7 +41,6 @@ PROMPT='[ %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f] '
 #-------------------- Paths ----------------------------------------------------
 # TODO : We should not manage paths here. We need to use native package managers
 export PATH=$PATH:/home/stewart/code/python/install/3.11.5/bin
-export PATH=$PATH:/home/stewart/code/ruby/install/3.2.2/bin
 export PATH=$PATH:/home/stewart/code/nvim/install/0.9.2/bin
 export PATH=$PATH:/home/stewart/code/lua-language-server/bin
 export PATH=$PATH:/home/stewart/code/php/install/8.2.10/bin
@@ -55,7 +54,8 @@ export MANPATH=$MANPATH:/home/stewart/code/mysql/install/8.1.0/man
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+# Introduce RBENV
+eval "$(~/.rbenv/bin/rbenv init - zsh)"
 
 
 #-------------------- ZSH Extensions -------------------------------------------
@@ -75,6 +75,8 @@ alias ll='exa -l --icons'
 alias la='exa --icons'
 alias l='exa --icons'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias r='rbenv $@'
+alias rb='rbenv bundle exec $@'
 
 
 
