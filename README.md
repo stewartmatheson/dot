@@ -9,16 +9,15 @@ a setup file that is responsible for putting file configurations in their
 correct places.
 
 ## Usage 
+Run setup and pray.
 
-Run setup. 
-
-## Prereqs
+## Tools 
  * zsh
- * nvim
+ * entr for tmux auto reload - https://github.com/eradman/entr
+ * nvim 
  * bat for cat
  * https://github.com/zsh-users/zsh-autosuggestions
  * https://github.com/zsh-users/zsh-syntax-highlighting/
-
 
 ## TODO 
  * Setup a health check function that will test for all requirements and fail

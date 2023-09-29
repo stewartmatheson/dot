@@ -107,3 +107,15 @@ nc () {
     nvim
   popd
 }
+
+# Function to add a prefix to each line of piped input
+add_prefix() {
+    local prefix="$1"
+    while IFS= read -r line; do
+        echo "${prefix}${line}"
+    done
+}
+
+figlet_comment() {
+  figlet $1 | add_prefix "# "
+}
