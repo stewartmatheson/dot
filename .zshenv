@@ -21,11 +21,19 @@ bindkey -e
 
 
 #-------------------- Settings -------------------------------------------------
-# Prompt to something to sane
-PROMPT="[ %~ ] "
 # Set editor. Some apps use this including git
 export EDITOR=nvim
 export PAGER="most"
+
+
+# -------------------- Prompt --------------------------------------------------
+# Based on https://dev.to/cassidoo/customizing-my-zsh-prompt-3417
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '%b '
+setopt PROMPT_SUBST
+PROMPT='[ %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f] '
+
 
 
 #-------------------- Paths ----------------------------------------------------
