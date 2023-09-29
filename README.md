@@ -20,9 +20,11 @@ Run setup.
 
 
 ## TODO 
- * Import nvim configuration
- * Start building up a vim configuration
  * Setup a health check function that will test for all requirements and fail
    if they are not met.
+ * Figure out how to package up deps in my paths. We should remove that from
+   this configuration
+ * Start building up a vim configuration
+ * Create submodules for the zsh and its two requirements
   
 
