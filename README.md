@@ -15,6 +15,7 @@ Run setup.
 ## Prereqs
  * zsh
  * nvim
+ * bat for cat
  * https://github.com/zsh-users/zsh-autosuggestions
  * https://github.com/zsh-users/zsh-syntax-highlighting/
 
@@ -25,6 +26,5 @@ Run setup.
  * Figure out how to package up deps in my paths. We should remove that from
    this configuration
  * Start building up a vim configuration
- * Create submodules for the zsh and its two requirements
   
 
