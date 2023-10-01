@@ -21,6 +21,11 @@ bindkey -e
 
 
 
+# -------------------- Bash Compleation ----------------------------------------
+autoload -U +X bashcompinit && bashcompinit
+
+
+
 #-------------------- Settings -------------------------------------------------
 # Set editor. Some apps use this including git
 export EDITOR=nvim
@@ -56,6 +61,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # Introduce RBENV
 eval "$(~/.rbenv/bin/rbenv init - zsh)"
+# Added by the rust up install
+. "$HOME/.cargo/env"
+# Watchman from the facebook build system
+export PATH=$PATH:/home/stewart/code/facebook/installed/watchman/bin
+
+
 
 
 #-------------------- ZSH Extensions -------------------------------------------
@@ -75,8 +86,8 @@ alias ll='exa -l --icons'
 alias la='exa --icons'
 alias l='exa --icons'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias r='rbenv $@'
-alias rb='rbenv bundle exec $@'
+alias r='rbenv exec'
+alias rb='rbenv exec bundle exec'
 
 
 

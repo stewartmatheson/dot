@@ -97,7 +97,9 @@ local lsp_config = {
     lsp_config.lua_ls.setup(lsp.nvim_lua_ls())
     lsp_config.lemminx.setup({ cmd = { "lemminx.exe" } })
 
-    lsp.setup_servers({ 'clangd', 'lua_ls', 'phpactor', 'sqlls', 'html', 'bashls' })
+    lsp.setup_servers({
+      'clangd', 'lua_ls', 'phpactor', 'sqlls', 'html', 'bashls', 'sorbet', 'solargraph'
+    })
 
     lsp.format_on_save({
       servers = {
