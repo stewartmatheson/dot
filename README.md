@@ -26,6 +26,7 @@ Run setup and pray.
  * https://github.com/zsh-users/zsh-syntax-highlighting/
  * nvm for managing node versions
  * rbenv
+ * wl-copy for copy and paste when running wayland on linux
 
 ## Things you should have
  * A nerd font patched font.

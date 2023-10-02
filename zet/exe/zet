@@ -4,4 +4,6 @@ $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'bundler/setup'
 require 'zet'
 
-Zet::Note.new(title: ARGV[0], body: 'Test Body. This will never change').render
+tags = ARGV[0]
+body = STDIN.gets
+Zet::Note.new(tags:, body:).render

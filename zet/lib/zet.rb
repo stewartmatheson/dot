@@ -6,4 +6,5 @@ module Zet
 
   require 'zet/note'
   require 'zet/tag'
+  require 'zet/configuration'
 end
