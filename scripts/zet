@@ -5,5 +5,8 @@ zet_project_dir="${script_dir}/../zet"
 
 # Based loosly on how rbenv handles shims here... https://github.com/rbenv/rbenv/blob/master/libexec/rbenv-rehash#L57
 export RBENV_ROOT="$HOME/.rbenv"
-export RBENV_VERSION="$(cat ${zet_project_dir}/.ruby-version)"
-exec rbenv exec ruby ${zet_project_dir}/exe/zet "$@"
+
+RBENV_VERSION="$(cat "${zet_project_dir}"/.ruby-version)"
+export RBENV_VERSION
+
+exec rbenv exec ruby "${zet_project_dir}"/exe/zet "$@"

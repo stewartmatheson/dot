@@ -1,13 +1,14 @@
 # typed: strong
 
 module Zet
-  # Note class
+  # Note class which will take in params and output a result.
   class Note
     extend T::Sig
 
-    sig { params(title: String).void }
-    def initialize(title:)
+    sig { params(title: String, body: String).void }
+    def initialize(title:, body:)
       @title = title
+      @body = body
     end
 
     sig { returns(NilClass) }
@@ -15,6 +16,8 @@ module Zet
       puts '---'
       puts @title
       puts '---'
+      puts @body
     end
+
   end
 end

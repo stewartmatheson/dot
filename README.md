@@ -14,6 +14,8 @@ learning
 Run setup and pray.
 
 ## Direct Deps
+ * watchman for zet development
+ * rust
  * git
  * fzf
  * zsh
@@ -23,7 +25,7 @@ Run setup and pray.
  * https://github.com/zsh-users/zsh-autosuggestions
  * https://github.com/zsh-users/zsh-syntax-highlighting/
  * nvm for managing node versions
- * rbenv for managing ruby versions although we will have to migrate to this
+ * rbenv
 
 ## Things you should have
  * A nerd font patched font.
@@ -34,10 +36,11 @@ Run setup and pray.
    if they are not met.
  * Figure out how to package up deps in my paths. We should remove that from
    this configuration
- * Start building up a vim configuration
+ * Start building up a non nvim configuration
  * Move fzf inline with a manual checkout
  * Figure out what the following does and why I care.
    https://github.com/rwxrob/dot/blob/eb5328514a74293c3e6677e284c051023c428b5a/snippets/bash/filter#L4
+ * Attempt to rustup during install process.
  
 ## Zet Requirements
  * A function to create a new note and return to the path to it
