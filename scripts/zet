@@ -1,4 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Based loosly on how rbenv handles shims here... https://github.com/rbenv/rbenv/blob/master/libexec/rbenv-rehash#L57
+execute_ruby() {
+  local mode="$1"
+  shift
+
+  script_dir="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+  zet_project_dir="${script_dir}/../zet"
+  export RBENV_ROOT="$HOME/.rbenv"
+  RBENV_VERSION="$(cat "${zet_project_dir}"/.ruby-version)"
+  export RBENV_VERSION
+
+  exec rbenv exec ruby "${zet_project_dir}"/exe/zet "$mode" "$@"
+}
+
+tags_ls() {
+  find "$ZET_HOME" -type f -regex ".*\.\md"
+}
 
 # Read the first parameter (option)
 option="$1"
@@ -7,10 +25,13 @@ shift
 # Perform actions based on the option
 case "$option" in
     "note")
-        exec $EDITOR "$(echo "$*" | zet-note)"
+        exec $EDITOR "$(echo "$*" | execute_ruby note)"
+        ;;
+    "tags")
+        tags_ls | execute_ruby tags
         ;;
     "ls")
-        find "$ZET_HOME" -type f -regex ".*\.\md"
+        tags_ls
         ;;
     *)
         echo "Invalid option: $option"

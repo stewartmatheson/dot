@@ -4,6 +4,4 @@ $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'bundler/setup'
 require 'zet'
 
-tags = ARGV[0]
-title = STDIN.gets
-Zet::Note.new(tags:, title:).render
+Zet::CLI.new.execute

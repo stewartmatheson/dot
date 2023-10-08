@@ -35,7 +35,9 @@ module Zet
       file.puts "title: #{@title}"
       file.puts "tags: #{@tags}"
       file.puts '---'
-      file.puts @title
+      file.puts "# #{@title}"
+      file.puts ''
+      file.puts ''
       file.puts '---'
       file.puts path
     end
