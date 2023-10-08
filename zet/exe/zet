@@ -5,5 +5,5 @@ require 'bundler/setup'
 require 'zet'
 
 tags = ARGV[0]
-body = STDIN.gets
-Zet::Note.new(tags:, body:).render
+title = STDIN.gets
+Zet::Note.new(tags:, title:).render

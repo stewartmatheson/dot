@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-vim.opt.colorcolumn = "120"
+--vim.opt.colorcolumn = "120"
 
 vim.g.mapleader = " "
 vim.g.updatetime = 100

@@ -5,18 +5,19 @@ module Zet
   class Note
     extend T::Sig
 
-    sig { params(tags: String, body: String).void }
-    def initialize(tags:, body:)
+    sig { params(tags: String, title: String).void }
+    def initialize(tags:, title:)
       @tags = tags
-      @body = body
+      @title = title
     end
 
     sig { returns(NilClass) }
     def render
       puts '---'
+      puts @title
       puts "tags: #{@tags}"
       puts '---'
-      puts @body
+      puts @title
       puts '---'
       puts path
     end
@@ -25,17 +26,17 @@ module Zet
 
     sig { returns(String) }
     def path
-      "#{home_folder}#{date_folder_prefix}#{slug}.md"
+      "#{home_folder}/#{date_folder_prefix}/#{slug}.md"
     end
 
     sig { returns(String) }
     def slug
-      "#{Dir.home}/.zet"
+      @title.gsub("\n", '').gsub(' ', '-').downcase
     end
 
     sig { returns(String) }
     def home_folder
-      ""
+      "#{Dir.home}/.zet"
     end
 
     sig { returns(String) }

@@ -20,9 +20,9 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 
 
-
-# -------------------- Bash Compleation ----------------------------------------
+# -------------------- Compleation ---------------------------------------------
 autoload -U +X bashcompinit && bashcompinit
+fpath=(~/.zsh/zsh-completions $fpath)
 
 
 
@@ -45,8 +45,6 @@ PROMPT='[ %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f] '
 
 #-------------------- Paths ----------------------------------------------------
 # TODO : We should not manage paths here. We need to use native package managers
-#
-#
 # Use NVM from https://github.com/nvm-sh/nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -132,3 +130,4 @@ add_prefix() {
 figlet_comment() {
   figlet $1 | add_prefix "# "
 }
+
