@@ -1,12 +1,19 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-script_dir="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-zet_project_dir="${script_dir}/../zet"
+# Read the first parameter (option)
+option="$1"
+shift
 
-# Based loosly on how rbenv handles shims here... https://github.com/rbenv/rbenv/blob/master/libexec/rbenv-rehash#L57
-export RBENV_ROOT="$HOME/.rbenv"
-
-RBENV_VERSION="$(cat "${zet_project_dir}"/.ruby-version)"
-export RBENV_VERSION
-
-exec rbenv exec ruby "${zet_project_dir}"/exe/zet "$@"
+# Perform actions based on the option
+case "$option" in
+    "note")
+        exec $EDITOR "$(echo "$*" | zet-note)"
+        ;;
+    "ls")
+        find "$ZET_HOME" -type f -regex ".*\.\md"
+        ;;
+    *)
+        echo "Invalid option: $option"
+        echo "Available options: note, ls"
+        ;;
+esac

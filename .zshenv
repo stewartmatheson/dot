@@ -30,6 +30,7 @@ fpath=(~/.zsh/zsh-completions $fpath)
 # Set editor. Some apps use this including git
 export EDITOR=nvim
 export PAGER="most"
+export ZET_HOME="${HOME}/.zet"
 
 
 
