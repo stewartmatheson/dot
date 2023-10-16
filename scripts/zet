@@ -5,7 +5,7 @@ execute_ruby() {
   local mode="$1"
   shift
 
-  script_dir="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+  script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
   zet_project_dir="${script_dir}/../zet"
   export RBENV_ROOT="$HOME/.rbenv"
   RBENV_VERSION="$(cat "${zet_project_dir}"/.ruby-version)"
@@ -24,17 +24,17 @@ shift
 
 # Perform actions based on the option
 case "$option" in
-    "note")
-        exec $EDITOR "$(echo "$*" | execute_ruby note)"
-        ;;
-    "tags")
-        tags_ls | execute_ruby tags
-        ;;
-    "ls")
-        tags_ls
-        ;;
-    *)
-        echo "Invalid option: $option"
-        echo "Available options: note, ls"
-        ;;
+"note")
+  exec $EDITOR "$(echo "$*" | execute_ruby note)"
+  ;;
+"tags")
+  tags_ls | execute_ruby tags
+  ;;
+"ls")
+  tags_ls
+  ;;
+*)
+  echo "Invalid option: $option"
+  echo "Available options: note, ls"
+  ;;
 esac

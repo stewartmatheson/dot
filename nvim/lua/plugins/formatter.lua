@@ -7,6 +7,7 @@ return {
         ruby = formatters.lsp,
         lua = formatters.lsp,
         go = formatters.shell({ cmd = { "goimports" } }),
+        sh = formatters.shell({ cmd = { "shfmt", "-i", "2" } }),
       }
     })
   end
