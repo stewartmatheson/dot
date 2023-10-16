@@ -98,14 +98,8 @@ local lsp_config = {
     lsp_config.lemminx.setup({ cmd = { "lemminx.exe" } })
 
     lsp.setup_servers({
-      'clangd', 'lua_ls', 'phpactor', 'sqlls', 'html', 'bashls', 'sorbet', 'solargraph'
-    })
-
-    lsp.format_on_save({
-      servers = {
-        ['lua_ls'] = { 'lua' },
-        ['clangd'] = { 'cpp', 'c', 'h', 'hpp' }
-      }
+      'clangd', 'lua_ls', 'phpactor', 'sqlls', 'html',
+      'bashls', 'sorbet', 'solargraph', 'gopls'
     })
 
     lsp.set_sign_icons({
