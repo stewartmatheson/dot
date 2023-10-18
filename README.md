@@ -42,6 +42,7 @@ Run setup and pray.
  * Figure out what the following does and why I care.
    https://github.com/rwxrob/dot/blob/eb5328514a74293c3e6677e284c051023c428b5a/snippets/bash/filter#L4
  * Attempt to rustup during install process.
+ * Split .zshenv and .zshrc
  
 ## Zet Requirements
  * A function to create a new note and return to the path to it

@@ -31,6 +31,7 @@ fpath=(~/.zsh/zsh-completions $fpath)
 export EDITOR=nvim
 export PAGER="most"
 export ZET_HOME="${HOME}/.zet"
+export MANPAGER="nvim +Man!"
 
 
 
@@ -80,6 +81,7 @@ alias r='rbenv exec'
 alias rb='rbenv exec bundle exec'
 alias lynx='lynx -accept_all_cookies -vikeys'
 alias '?'='BROWSER=lynx ddgr'
+alias chmx="chmod +x "
 
 
 
@@ -134,3 +136,4 @@ figlet_comment() {
   figlet $1 | add_prefix "# "
 }
 
+colorscript
