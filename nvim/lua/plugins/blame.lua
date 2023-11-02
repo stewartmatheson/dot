@@ -4,7 +4,6 @@ return {
     local wk = require('which-key')
     wk.register({
       ["<leader>"] = {
-        name = "Git",
         g = { ':ToggleBlame<CR>', 'Toggle Blame' }
       }
     })

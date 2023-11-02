@@ -32,6 +32,7 @@ export EDITOR=nvim
 export PAGER="most"
 export ZET_HOME="${HOME}/.zet"
 export MANPAGER="nvim +Man!"
+export GOPATH="${HOME}/code/go"
 
 
 
@@ -70,21 +71,6 @@ source /home/stewart/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 
-#-------------------- Alias ----------------------------------------------------
-alias cat="bat"
-alias ls='ls --color'
-alias ll='exa -l --icons'
-alias la='exa --icons'
-alias l='exa --icons'
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias r='rbenv exec'
-alias rb='rbenv exec bundle exec'
-alias lynx='lynx -accept_all_cookies -vikeys'
-alias '?'='BROWSER=lynx ddgr'
-alias chmx="chmod +x "
-
-
-
 # -------------------- Alias Functions -----------------------------------------
 # A function that will kill a process based on a port number
 kp() {
@@ -106,6 +92,22 @@ nc () {
     nvim init.lua
   popd
 }
+
+
+
+#-------------------- Alias ----------------------------------------------------
+alias cat="bat"
+alias ls='ls --color'
+alias ll='exa -l --icons'
+alias la='exa --icons'
+alias l='exa --icons'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias r='rbenv exec'
+alias rb='rbenv exec bundle exec'
+alias lynx='lynx -accept_all_cookies -vikeys'
+alias '?'='BROWSER=lynx ddgr'
+alias chmx="chmod +x "
+alias fp="ps auxh | grep "
 
 
 

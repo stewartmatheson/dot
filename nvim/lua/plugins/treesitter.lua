@@ -8,7 +8,7 @@ return {
     configs.setup({
       ensure_installed = {
         "c", "cpp", "lua", "vim", "vimdoc", "xml", "php",
-        "html", "css", "sql", "html", "bash", "ruby"
+        "html", "css", "sql", "html", "bash", "ruby", "go"
       },
       sync_install = false,
       highlight = { enable = true },

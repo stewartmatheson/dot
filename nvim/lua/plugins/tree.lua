@@ -9,7 +9,6 @@ return {
     local wk = require('which-key')
     wk.register({
       ["<leader>"] = {
-        name = "Tree",
         e = { ':NvimTreeToggle<CR>', 'Toggle Tree' }
       }
     })

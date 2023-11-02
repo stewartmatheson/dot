@@ -8,7 +8,6 @@ return {
     wk.setup({})
     wk.register({
       ["<leader>"] = {
-        name = "IDE",
         i = { ':SymbolsOutline<CR>:NvimTreeToggle<CR>', 'Toggle IDE' }
       }
     })
