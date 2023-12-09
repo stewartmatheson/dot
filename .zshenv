@@ -138,4 +138,8 @@ figlet_comment() {
   figlet $1 | add_prefix "# "
 }
 
+printp() {
+  for i in $(echo "$PATH" | sed 's/:/ /g'); do echo $i;  done;
+}
+
 colorscript

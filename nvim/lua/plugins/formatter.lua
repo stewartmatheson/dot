@@ -6,6 +6,15 @@ return {
       formatter_by_ft = {
         ruby = formatters.lsp,
         lua = formatters.lsp,
+        javascript = {
+          formatters.if_file_exists({
+            pattern = ".eslintrc.*",
+            formatter = function()
+              vim.cmd("EslintFixAll")
+            end
+          })
+        },
+        typescript = formatters.lsp,
         go = formatters.shell({ cmd = { "goimports" } }),
         sh = formatters.shell({ cmd = { "shfmt", "-i", "2" } }),
       }
