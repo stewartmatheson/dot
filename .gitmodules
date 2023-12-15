@@ -16,3 +16,6 @@
 [submodule "shell-color-scripts"]
 	path = shell-color-scripts
 	url = https://gitlab.com/dwt1/shell-color-scripts
+[submodule "nvm"]
+	path = nvm
+	url = git@github.com:nvm-sh/nvm.git

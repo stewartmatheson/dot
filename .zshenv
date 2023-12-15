@@ -34,6 +34,13 @@ export ZET_HOME="${HOME}/.zet"
 export MANPAGER="nvim +Man!"
 export GOPATH="${HOME}/code/go"
 
+# The following is for wayland. We should puts this in a switch
+export QT_SCALE_FACTOR=1
+export QT_QPA_PLATFORM=wayland
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export XDG_SESSION_TYPE=wayland
+export MOZ_ENABLE_WAYLAND=1
+export GDK_BACKEND=wayland 
 
 
 # -------------------- Prompt --------------------------------------------------
@@ -43,32 +50,6 @@ precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
 PROMPT='[ %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f] '
-
-
-
-#-------------------- Paths ----------------------------------------------------
-# TODO : We should not manage paths here. We need to use native package managers
-# Use NVM from https://github.com/nvm-sh/nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# Introduce RBENV
-eval "$(~/.rbenv/bin/rbenv init - zsh)"
-# Added by the rust up install
-. "$HOME/.cargo/env"
-#Source the paths file
-source "$HOME/.paths"
-
-
-
-#-------------------- ZSH Extensions -------------------------------------------
-# Auto suggestions from https://github.com/zsh-users/zsh-autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-# FZF which has be installed via apt as provided key bindings for us
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-# Source syntax highlighting https://github.com/zsh-users/zsh-syntax-highlighting/
-source /home/stewart/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 
 
 # -------------------- Alias Functions -----------------------------------------
@@ -142,4 +123,4 @@ printp() {
   for i in $(echo "$PATH" | sed 's/:/ /g'); do echo $i;  done;
 }
 
-colorscript
+. "$HOME/.cargo/env"

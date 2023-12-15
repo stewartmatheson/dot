@@ -3,19 +3,24 @@
 # This is a setup script that is intented to run as the root of all other scripts
 # The idea is that this is the only place required for init. Once this script runs all systems should be working.
 # -------------------- Git Submodules ------------------------------------------
-git submodule init
+git submodule update
 
 # -------------------- Home Folder Links ---------------------------------------
 ln -sf "$PWD/.zshenv" "${HOME}/.zshenv"
 ln -sf "$PWD/.zshrc" "${HOME}/.zshrc"
 ln -sf "$PWD/.zsh" "$HOME/.zsh"
+ln -sf "$PWD/rbenv" "$HOME/.rbenv"
+ln -sf "$PWD/nvm" "$HOME/.nvm"
 
 mkdir -p "$HOME"/.config
 ln -sf "$PWD/nvim" "$HOME/.config/nvim"
+ln -sf "$PWD/sway" "$HOME/.config/sway"
+ln -sf "$PWD/waybar" "$HOME/.config/waybar"
+ln -sf "$PWD/foot" "$HOME/.config/foot"
 
 ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$PWD/tmux" "$HOME/.tmux"
-ln -sf "$PWD/rbenv" "$HOME/.rbenv"
+# ln -sf "$PWD/rbenv" "$HOME/.rbenv"
 
 # -------------------- HushLogin -----------------------------------------------
 touch "${HOME}"/.hushlogin

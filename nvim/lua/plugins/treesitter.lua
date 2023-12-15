@@ -9,7 +9,7 @@ return {
       ensure_installed = {
         "c", "cpp", "lua", "vim", "vimdoc", "xml", "php",
         "html", "css", "sql", "html", "bash", "ruby", "go",
-        "javascript", "typescript"
+        "javascript", "typescript", "markdown", "markdown_inline"
       },
       sync_install = false,
       highlight = { enable = true },
