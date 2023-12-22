@@ -123,4 +123,8 @@ printp() {
   for i in $(echo "$PATH" | sed 's/:/ /g'); do echo $i;  done;
 }
 
+git_clone_clipboard() {
+  git clone $(wl-paste)
+}
+
 . "$HOME/.cargo/env"
