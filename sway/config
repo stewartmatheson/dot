@@ -208,8 +208,8 @@ bindsym $mod+r mode "resize"
 exec swayosd-server
 bindsym XF86MonBrightnessUp exec swayosd-client --brightness raise
 bindsym XF86MonBrightnessDown exec swayosd-client --brightness lower
-bindsym XF86AudioRaiseVolume+ exec swayosd-client --output-volume 15
-bindsym XF86AudioLowerVolume+ exec swayosd-client --output-volume -15
+bindsym XF86AudioRaiseVolume+ exec swayosd-client --output-volume 5
+bindsym XF86AudioLowerVolume+ exec swayosd-client --output-volume -5
 bindsym XF86AudioMute+ exec swayosd-client --output-volume mute-toggle
 
 
