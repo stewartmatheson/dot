@@ -91,7 +91,6 @@ alias chmx="chmod +x "
 alias fp="ps auxh | grep "
 
 
-
 # -------------------- Output Functions ----------------------------------------
 # A set of fucntions that output things. Handy for snippets et al.
 title() {
@@ -125,6 +124,10 @@ printp() {
 
 git_clone_clipboard() {
   git clone $(wl-paste)
+}
+
+pacman_list_files () {
+  pacman -Qlq $1 | grep -v '/$' | xargs -r du -h | sort -h
 }
 
 . "$HOME/.cargo/env"
