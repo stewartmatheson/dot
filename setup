@@ -18,6 +18,7 @@ ln -sf "$PWD/sway" "$HOME/.config/sway"
 ln -sf "$PWD/waybar" "$HOME/.config/waybar"
 ln -sf "$PWD/foot" "$HOME/.config/foot"
 ln -sf "$PWD/rofi" "$HOME/.config/rofi"
+ln -sf "$PWD/swayosd" "$HOME/.config/swayosd"
 
 ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$PWD/tmux" "$HOME/.tmux"
