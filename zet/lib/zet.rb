@@ -5,6 +5,7 @@ module Zet
   require 'sorbet-runtime'
   require 'pry'
 
+  require 'zet/timer'
   require 'zet/cli'
   require 'zet/note'
   require 'zet/tag'

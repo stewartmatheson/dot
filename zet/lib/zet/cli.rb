@@ -17,15 +17,19 @@ module Zet
 
     sig { void }
     def note
-      tags = ARGV[1]
-      title = $stdin.gets || ''
-      Note.new(tags:, title:).render
+      Timer.operation 'Create New Note' do
+        tags = ARGV[1]
+        title = $stdin.gets || ''
+        Note.new(tags:, title:).render
+      end
     end
 
-    sig { returns(T::Array[String]) }
+    sig { void }
     def tags
-      $stdin.readlines.each do |line|
-        Tag.new(file: line.strip).render
+      Timer.operation 'Create New Tag' do
+        $stdin.readlines.each do |line|
+          Tag.new(file: line.strip).render
+        end
       end
     end
 
