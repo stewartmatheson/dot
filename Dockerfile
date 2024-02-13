@@ -1,12 +1,7 @@
-FROM alpine
-RUN ["apk", "add", "bash", "zsh", "git", "tmux", "exa", "neovim", "alpine-sdk"]
-ENV HOME /home
+FROM ubuntu
+RUN [ "apt", "update" ]
+RUN [ "apt", "install", "-y", "zsh", "git", "neovim" ]
+COPY . /root/dot
+WORKDIR "/root/dot"
+#RUN ["zsh", "./setup"]
 
-WORKDIR "/home"
-ADD . ./dot
-
-WORKDIR "/home/dot"
-RUN ["bash", "./setup"]
-
-WORKDIR "/home"
-CMD ["zsh"]

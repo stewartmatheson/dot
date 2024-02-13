@@ -50,7 +50,7 @@ local c_and_cpp = function()
 end
 
 return {
-  dir = "~/code/open-source/nvim-dap",
+  "mfussenegger/nvim-dap",
   config = function()
     local actions = {
       start = {

@@ -132,4 +132,6 @@ pacman_list_files () {
   pacman -Qlq $1 | grep -v '/$' | xargs -r du -h | sort -h
 }
 
-. "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi

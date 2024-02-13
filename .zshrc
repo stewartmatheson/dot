@@ -19,9 +19,7 @@ if [ -e "$arch_completion_file" ]; then
 fi
 
 # Source syntax highlighting https://github.com/zsh-users/zsh-syntax-highlighting/
-source /home/stewart/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-
+source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 #-------------------- Paths ----------------------------------------------------
 # TODO : We should not manage paths here. We need to use native package managers
@@ -29,12 +27,20 @@ source /home/stewart/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # Introduce RBENV
 eval "$(~/.rbenv/bin/rbenv init - zsh)"
+
 # Added by the rust up install
-. "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi
+
 #Source the paths file
 source "$HOME/.paths"
 
 # colorscript
-macchina
+
+if [ -x "$(command -v macchina)" ]; then
+  macchina
+fi
