@@ -1,17 +1,12 @@
 local ruby = function()
   local dap = require('dap')
+  dap.set_log_level('TRACE')
 
   dap.adapters.ruby = function(callback, config)
     callback {
-      type = "server",
-      host = "127.0.0.1",
-      port = "${port}",
-      executable = {
-        command = "bundle",
-        args = { "exec", "rdbg", "-n", "--open", "--port", "${port}",
-          "-c", "--", "bundle", "exec", config.command, config.script,
-        },
-      },
+      type = "executable",
+      command = "./bin/rdbg",
+      args = { "-O", "--sock-path=./debug.sock", "-c", "--", config.command, config.script },
     }
   end
 
@@ -19,18 +14,10 @@ local ruby = function()
     {
       type = "ruby",
       name = "debug current file",
-      request = "attach",
-      localfs = true,
-      command = "ruby",
-      script = "${file}",
-    },
-    {
-      type = "ruby",
-      name = "run current spec file",
-      request = "attach",
-      localfs = true,
-      command = "rake",
+      request = "launch",
+      command = "./bin/rake",
       script = "test",
+      pipe = "./debug.sock"
     },
   }
 end
@@ -108,11 +95,17 @@ return {
           'Preview'
         },
         frames = {
-          function() require('dap.ui.widgets').frames() end,
+          function()
+            local widgets = require('dap.ui.widgets')
+            widgets.centered_float(widgets.frames)
+          end,
           'Frames'
         },
         scopes = {
-          function() require('dap.ui.widgets').scopes() end,
+          function()
+            local widgets = require('dap.ui.widgets')
+            widgets.centered_float(widgets.scopes)
+          end,
           'Scopes'
         }
       }
@@ -142,7 +135,7 @@ return {
       ["<F12>"] = actions.step_out,
     })
 
-    --c_and_cpp()
+    c_and_cpp()
     ruby()
   end
 }

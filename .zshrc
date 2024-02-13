@@ -36,4 +36,5 @@ eval "$(~/.rbenv/bin/rbenv init - zsh)"
 #Source the paths file
 source "$HOME/.paths"
 
-colorscript
+# colorscript
+macchina
