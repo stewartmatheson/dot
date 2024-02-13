@@ -1,6 +1,0 @@
-require: rubocop-sorbet
-AllCops:
-  NewCops: enable
-
-Naming/BlockForwarding:
-  Enabled: false
