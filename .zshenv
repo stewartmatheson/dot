@@ -53,6 +53,10 @@ zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
 PROMPT='[ %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f] '
 
+# Add a docker label to the prompt if we are running in docker
+if [ -e /.dockerenv ]; then
+  PROMPT='[ docker %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f] '
+fi
 
 # -------------------- Alias Functions -----------------------------------------
 # A function that will kill a process based on a port number
