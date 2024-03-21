@@ -22,7 +22,6 @@ fi
 source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 #-------------------- Paths ----------------------------------------------------
-# TODO : We should not manage paths here. We need to use native package managers
 # Use NVM from https://github.com/nvm-sh/nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -40,7 +39,8 @@ fi
 source "$HOME/.paths"
 
 # colorscript
-
 if [ -x "$(command -v macchina)" ]; then
-  macchina
+  neofetch
 fi
+
+

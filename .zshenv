@@ -136,6 +136,18 @@ pacman_list_files () {
   pacman -Qlq $1 | grep -v '/$' | xargs -r du -h | sort -h
 }
 
+split_and_print() {
+    parts=("${(@s/:/)1}")
+    for part in "${parts[@]}"; do
+        echo "$part"
+    done
+}
+
+show_paths() {
+  split_and_print "$PATH"
+}
+
 if [ -f "$HOME/.cargo/env" ]; then
   . "$HOME/.cargo/env"
 fi
+

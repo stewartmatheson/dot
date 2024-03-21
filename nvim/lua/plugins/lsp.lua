@@ -100,7 +100,7 @@ local lsp_config = {
     lsp.setup_servers({
       'clangd', 'lua_ls', 'phpactor', 'sqlls', 'html',
       'bashls', 'sorbet', 'solargraph', 'gopls', 'eslint',
-      'tsserver'
+      'tsserver', 'pylsp'
     })
 
     lsp.set_sign_icons({

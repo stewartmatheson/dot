@@ -6,6 +6,7 @@ return {
       formatter_by_ft = {
         ruby = formatters.lsp,
         lua = formatters.lsp,
+        python = formatters.black,
         javascript = {
           formatters.if_file_exists({
             pattern = ".eslintrc.*",

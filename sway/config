@@ -216,6 +216,8 @@ bindsym XF86AudioLowerVolume+ exec swayosd-client --output-volume -5
 bindsym XF86AudioMute+ exec swayosd-client --output-volume mute-toggle
 
 
+exec swaync
+
 #
 # Status Bar:
 #
