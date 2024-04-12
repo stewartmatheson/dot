@@ -9,8 +9,6 @@
 #-------------------- ZSH Default ----------------------------------------------
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/stewart/.zshrc' # TODO : Fix this
-autoload -Uz compinit
-compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -23,7 +21,9 @@ bindkey -e
 # -------------------- Compleation ---------------------------------------------
 autoload -U +X bashcompinit && bashcompinit
 fpath=(~/.zsh/zsh-completions $fpath)
-
+fpath=(~/code/open-source/github-cli/completion $fpath)
+autoload -Uz compinit
+compinit -i
 
 
 #-------------------- Settings -------------------------------------------------

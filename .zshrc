@@ -40,7 +40,7 @@ source "$HOME/.paths"
 
 # colorscript
 if [ -x "$(command -v macchina)" ]; then
-  neofetch
+  fastfetch
 fi
 
 

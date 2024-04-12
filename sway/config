@@ -62,7 +62,7 @@ exec ~/.azotebg
 # Read `man 5 sway-input` for more information about this section.
 
 input "1267:12572:VEN_04F3:00_04F3:311C_Touchpad" {
- scroll_factor 0.2
+    scroll_factor 0.2
 }
 ### Key bindings
 #
@@ -113,6 +113,10 @@ input "1267:12572:VEN_04F3:00_04F3:311C_Touchpad" {
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+
+    bindsym $mod+Control+Left workspace left
+    bindsym $mod+Control+Right workspace right
+
 #
 # Workspaces:
 #

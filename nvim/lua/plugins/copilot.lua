@@ -1,16 +1,19 @@
-return {
+local copilot_lua = {
   "zbirenbaum/copilot.lua",
   cmd = "Copilot",
   event = "InsertEnter",
   config = function()
     require("copilot").setup({
+      suggestion = { enabled = false },
       panel = {
+        enabled = true,
         auto_refresh = true,
         layout = {
           position = "right"
-        }
+        },
       }
     })
+    require("copilot_cmp").setup()
 
     local wk = require('which-key')
     wk.register({
@@ -22,4 +25,19 @@ return {
       }
     })
   end,
+}
+
+
+
+local copilot_cmp = {
+  "zbirenbaum/copilot-cmp",
+  after = { "copilot.lua" },
+  config = function()
+    require("copilot_cmp").setup()
+  end
+}
+
+return {
+  copilot_cmp,
+  copilot_lua
 }
