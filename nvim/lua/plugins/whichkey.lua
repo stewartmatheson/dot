@@ -6,10 +6,5 @@ return {
     vim.o.timeoutlen = 300
     local wk = require('which-key')
     wk.setup({})
-    wk.register({
-      ["<leader>"] = {
-        i = { ':SymbolsOutline<CR>:NvimTreeToggle<CR>', 'Toggle IDE' }
-      }
-    })
   end
 }

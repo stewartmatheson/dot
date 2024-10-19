@@ -40,21 +40,18 @@ return {
     local wk = require('which-key')
     local builtin = require('telescope.builtin')
 
-    wk.register({
-      ["<leader>"] = {
-        f = {
-          name = "Search",
-          f = { builtin.find_files, 'Find Files' },
-          b = { builtin.buffers, 'Find Buffers' },
-          h = { builtin.help_tags, 'Find Help Tags' },
-          l = { builtin.hightlights, 'Find Highlights' },
-          s = { builtin.spell_suggest, 'Find Spelling' },
-          o = { builtin.vim_options, 'Find Options' },
-          a = { builtin.autocommands, 'Find Autocommands' },
-          g = { builtin.git_status, 'Find Chagnes' },
-          w = { builtin.live_grep, 'Live Grep' },
-        }
+    wk.add(
+      {
+        { "<leader>f",  group = "Search" },
+        { "<leader>fa", builtin.autocommands,  desc = "Find Autocommands" },
+        { "<leader>fb", builtin.buffers,       desc = "Find Buffers" },
+        { "<leader>ff", builtin.find_files,    desc = "Find Files" },
+        { "<leader>fg", builtin.git_status,    desc = "Find Chagnes" },
+        { "<leader>fh", builtin.help_tags,     desc = "Find Help Tags" },
+        { "<leader>fo", builtin.vim_options,   desc = "Find Options" },
+        { "<leader>fs", builtin.spell_suggest, desc = "Find Spelling" },
+        { "<leader>fw", builtin.live_grep,     desc = "Live Grep" },
       }
-    })
+    )
   end
 }

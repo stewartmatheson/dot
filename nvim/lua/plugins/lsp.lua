@@ -119,11 +119,13 @@ local lsp_config = {
     lsp_config.lua_ls.setup(lsp.nvim_lua_ls())
     lsp_config.lemminx.setup({ cmd = { "lemminx.exe" } })
 
+    -- eslint, tsserver
     lsp.setup_servers({
       'clangd', 'lua_ls', 'phpactor', 'sqlls', 'html',
-      'bashls', 'sorbet', 'gopls', 'eslint',
-      'tsserver', 'pylsp', 'solargraph',
+      'bashls', 'sorbet', 'gopls', 'pylsp',
+      'solargraph', 'cssls', 'denols'
     })
+
 
     lsp.set_sign_icons({
       error = '✘',

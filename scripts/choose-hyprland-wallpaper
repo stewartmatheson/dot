@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+WALLPAPER_FOLDER="$HOME/Wallpapers"
+
+# run the find command in the WALLPAPER_FOLDER and print only the file names
+WALLPAPER_TO_SET=$(find "$WALLPAPER_FOLDER" -type f -print0 | xargs -0 -n 1 basename | exec-wofi)
+
+set-hyprland-wallpaper "$WALLPAPER_FOLDER/$WALLPAPER_TO_SET"

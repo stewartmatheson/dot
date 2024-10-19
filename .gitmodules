@@ -19,3 +19,6 @@
 [submodule "nvm"]
 	path = nvm
 	url = git@github.com:nvm-sh/nvm.git
+[submodule "wofi/themes/catppuccin"]
+	path = wofi/themes/catppuccin
+	url = git@github.com:quantumfate/wofi.git

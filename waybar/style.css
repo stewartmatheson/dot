@@ -1,79 +1,115 @@
+@import "mocha.css";
+
 * {
-  font-family: FontAwesome, Noto Sans, Roboto, Helvetica, Arial, sans-serif;
-  text-shadow: rgba(0,0,0,.5) 1px 1px 2px;
-  font-size: 16px;
-  color: #ccc;
+  /* font-family: FantasqueSansMono Nerd Font; */
+  font-family: 'Inconsolata Nerd Font', monospace;
+  font-size: 17px;
+  min-height: 0;
 }
 
-window#waybar {
-    background-color: transparent;
-}
-
-window#waybar > box {
-  border-bottom: 3px solid #89b4fa;
-
-  background: rgb(49,50,68);
-  background: radial-gradient(circle, rgba(49,50,68,1) 0%, rgba(30,30,46,1) 60%, rgba(49,50,68,1) 88%);
-
-  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
-  margin-bottom: 10px;
-}
-
-#battery,
-#clock,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#workspaces,
-#mpd {
-    padding: 0 20px;
-}
-
-#clock {
-  padding-right: 25px;
-  padding-left: 10px;
-}
-
-#battery.critical:not(.charging) {
-    color: red;
+#waybar {
+  /* background-color: @base; */
+  background-color: transparent;
+  color: @text;
+  margin: 5px 5px;
 }
 
 #workspaces, #window {
-  padding: 0;
-  margin-left: 25px;
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#workspaces {
+  padding-right: 6px;
 }
 
 #window {
-  font-weight: 900; 
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inherit;
-    text-shadow: inherit;
+  padding-left: 10px;
+  padding-right: 5px;
 }
 
 #workspaces button {
-  color: #ddd;
-  margin-right: 10px;
-  padding: 10px;
-  border-radius: 0;
+  color: @lavender;
+  border-radius: 1rem;
+  padding: 0.4rem;
 }
 
-tooltip {
-  background: rgb(49,50,68);
-  border: 0;
-  border-radius: 0;
-  margin-top: -10px;
+#workspaces button.active {
+  color: @sky;
+  border-radius: 1rem;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+  border-radius: 1rem;
+}
+
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#window,
+#custom-power {
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+}
+
+#clock {
+  color: @blue;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 1rem;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#backlight, #battery {
+    border-radius: 0;
+}
+
+#pulseaudio {
+  color: @maroon;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+}
+
+#custom-music {
+  color: @mauve;
+  border-radius: 1rem;
+}
+
+#custom-lock {
+    border-radius: 1rem 0px 0px 1rem;
+    color: @lavender;
+}
+
+#custom-power {
+    margin-right: 1rem;
+    border-radius: 0px 1rem 1rem 0px;
+    color: @red;
+}
+
+#tray {
+  margin-right: 1rem;
+  border-radius: 1rem;
 }

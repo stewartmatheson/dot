@@ -7,10 +7,8 @@ return {
     require("nvim-tree").setup {}
 
     local wk = require('which-key')
-    wk.register({
-      ["<leader>"] = {
-        e = { ':NvimTreeToggle<CR>', 'Toggle Tree' }
-      }
+    wk.add({
+      { "<leader>e", ":NvimTreeToggle<CR>", desc = "Toggle Tree" },
     })
   end
 }

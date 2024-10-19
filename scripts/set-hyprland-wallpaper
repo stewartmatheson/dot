@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Function to change the wallpaper using hyprland
+change_wallpaper() {
+  file="$1"
+  echo "Chaging to: $file"
+  hyprctl hyprpaper preload "$file"
+  hyprctl hyprpaper wallpaper ,"$file"
+
+  # Update the config file with the new wallpaper path
+  hyprpaper_config_file="$HOME/.config/hypr/hyprpaper.conf"
+  sed -i -e "s|^preload = .*$|preload = $file|" \
+    -e "s|^wallpaper = .*$|wallpaper = ,$file|" \
+    "$hyprpaper_config_file"
+}
+
+# Check if the directory argument is provided
+if [ -z "$1" ]; then
+  echo "Usage: $0 <directory|file>"
+  exit 1
+fi
+
+# Check if the provided argument is a directory
+if [ -d "$1" ]; then
+  while true; do
+    file=$(find "$1" -type f | shuf -n 1)
+    change_wallpaper "$file"
+    sleep 300
+  done
+else
+  change_wallpaper "$1"
+fi

@@ -8,10 +8,9 @@ return {
     })
 
     local wk = require('which-key')
-    wk.register({
-      ["<leader>"] = {
-        s = { ':SymbolsOutline<CR>', 'Toggle Outline' }
-      }
+
+    wk.add({
+      { "<leader>s", ":SymbolsOutline<CR>", desc = "Toggle Outline" },
     })
   end
 }

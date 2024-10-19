@@ -8,10 +8,9 @@ return {
   },
   config = function()
     local wk = require('which-key')
-    wk.register({
-      ["<leader>"] = {
-        t = { ':TroubleToggle<CR>', 'Toggle Trouble' }
-      }
+
+    wk.add({
+      { "<leader>t", ":troubletoggle<cr>", desc = "toggle trouble" },
     })
   end
 }

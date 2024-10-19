@@ -16,6 +16,12 @@ local copilot_lua = {
     require("copilot_cmp").setup()
 
     local wk = require('which-key')
+
+    wk.add({
+      { "<leader>cp", ":Copilot panel<CR>", desc = "Open Panel" },
+    })
+
+    --[[
     wk.register({
       ["<leader>"] = {
         c = {
@@ -24,6 +30,8 @@ local copilot_lua = {
         }
       }
     })
+    ]]
+       --
   end,
 }
 

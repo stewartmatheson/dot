@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+THEME="catppuccin"
+BASE_DIR="$SCRIPT_DIR/../wofi/themes/$THEME"
+
+CONFIG="$BASE_DIR/config/config"
+STYLE="$BASE_DIR/src/mocha/style.css"
+
+if [[ ! $(pidof wofi) ]]; then
+  if [ -t 0 ]; then
+    wofi --show drun --conf "${CONFIG}" --style "${STYLE}"
+  else
+    cat | wofi --show dmenu --conf "${CONFIG}" --style "${STYLE}"
+  fi
+else
+  pkill wofi
+fi

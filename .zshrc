@@ -1,3 +1,10 @@
+#            _              
+#    _______| |__  _ __ ___ 
+#   |_  / __| '_ \| '__/ __|
+#  _ / /\__ \ | | | | | (__ 
+# (_)___|___/_| |_|_|  \___|
+#                           
+
 #-------------------- ZSH Extensions -------------------------------------------
 # Auto suggestions from https://github.com/zsh-users/zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -17,6 +24,11 @@ arch_completion_file="/usr/share/fzf/completion.zsh"
 if [ -e "$arch_completion_file" ]; then
     source $arch_completion_file
 fi
+
+# completion for deno
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit
+compinit -u
 
 # Source syntax highlighting https://github.com/zsh-users/zsh-syntax-highlighting/
 source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
@@ -40,7 +52,7 @@ source "$HOME/.paths"
 
 # colorscript
 if [ -x "$(command -v macchina)" ]; then
-  fastfetch
+  #fastfetch
 fi
 
 
