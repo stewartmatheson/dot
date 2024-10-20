@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
-
-pushd "$script_dir/../shell-color-scripts" >/dev/null || exit
-DEV=1 ./colorscript.sh -r
-popd >/dev/null || exit

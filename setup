@@ -33,11 +33,11 @@ cp -u "$PWD/.paths.template" "$HOME/.paths"
 # -------------------- neovim --------------------------------------------------
 # If we don't have neovim download it. Many distros have old versions that are
 # next to useless.
-if ! command -v "$command_name" &>/dev/null; then
-  local neovim_download="https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz"
-  local download_dir="/tmp"
-  local download_filename="neovim.tar.gz"
-  curl -L "$neovim_download" -o "$download_dir/$download_filename"
+if ! command -v "nvim" &>/dev/null; then
+  neovim_download_location="https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz"
+  download_dir="/tmp"
+  download_filename="neovim.tar.gz"
+  curl -L "$neovim_download_location" -o "$download_dir/$download_filename"
   tar -xzf "$download_dir/$download_filename" -C "/usr/local" --strip-components=1
   rm "$download_dir/$download_filename"
 fi

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# This script allows for changing and definig color profiles. It supports
+# setting a color profile as well as clearing the current profile and resetting
+# back to defaults.
+#
+# Currently Supported:
+#
+# Foot via foot.ini.
+#
+# Tmux supports plugins for color schemes. Not sure how we can choose this from
+# the CLI
+#
+# Nvim same as tmux will have color config via a plugin that is installed by its
+# own package manager. We might be able to trigger lazy to update.
+#
+# BAT has a command line. We should be able to do a copy
+#
+# Waybar supports a stylesheet that we should be able to copy in and out
+#
+# Wofi supports theme files and should be easy
+#
+# Hyprland is currently not part of the configuration so we should bring that
+# in to this project first
+
+# -------------------- File ----------------------------------------------------
