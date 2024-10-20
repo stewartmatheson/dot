@@ -5,7 +5,7 @@
 	path = .zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "tmux/plugins/tpm"]
-	path = tmux/plugins/tpm
+	path = applications/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule "rbenv"]
 	path = rbenv
@@ -17,5 +17,5 @@
 	path = nvm
 	url = git@github.com:nvm-sh/nvm.git
 [submodule "wofi/themes/catppuccin"]
-	path = wofi/themes/catppuccin
+	path = applications/wofi/themes/catppuccin
 	url = git@github.com:quantumfate/wofi.git
