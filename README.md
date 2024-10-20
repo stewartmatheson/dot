@@ -11,14 +11,13 @@ whole configuration effort in one place while providing a reference for my own
 learning
 
 ## Usage 
-Run setup and pray.
+Run setup.
 
 ## Direct Deps
- * watchman for zet development
  * rust
  * git
- * fzf
- * zsh
+ * fzf for history
+ * zsh this is the default shell that is being used
  * entr for tmux auto reload - https://github.com/eradman/entr
  * nvim 
  * bat for cat
@@ -39,17 +38,9 @@ Run setup and pray.
    this configuration
  * Start building up a non nvim configuration
  * Move fzf inline with a manual checkout
- * Figure out what the following does and why I care.
-   https://github.com/rwxrob/dot/blob/eb5328514a74293c3e6677e284c051023c428b5a/snippets/bash/filter#L4
  * Attempt to rustup during install process.
- * Split .zshenv and .zshrc
+ * Understand what should live in zshprofile and zshrc
  
-## Zet Requirements
- * A function to create a new note and return to the path to it
- * When a new note is created dump some sort of template down
- * A function that will return a list of note tags
- * A function that will return a list of note paths for a given tag
-
 ## Credit Rwxrob
 This project is inspired by rwxrob's dot files.  Check him out on twitch 
 https://www.twitch.tv/rwxrob. The github repo for his dotfiles 
