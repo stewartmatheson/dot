@@ -5,7 +5,7 @@
 	path = .zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "tmux/plugins/tpm"]
-	path = applications/tmux/plugins/tpm
+	path = applications/tmux/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule "rbenv"]
 	path = rbenv
