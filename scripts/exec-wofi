@@ -2,7 +2,7 @@
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 THEME="catppuccin"
-BASE_DIR="$SCRIPT_DIR/../wofi/themes/$THEME"
+BASE_DIR="$SCRIPT_DIR/../applications/wofi/themes/$THEME"
 
 CONFIG="$BASE_DIR/config/config"
 STYLE="$BASE_DIR/src/mocha/style.css"
