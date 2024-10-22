@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# The name of the profile to use
+PROFILE="gruvbox"
+
 # This script allows for changing and definig color profiles. It supports
 # setting a color profile as well as clearing the current profile and resetting
 # back to defaults.
@@ -17,7 +20,10 @@ foot-profile "base" "comic-shans" "gruvbox-dark" >"$foot_config_path"
 #
 # Nvim same as tmux will have color config via a plugin that is installed by its
 # own package manager. We might be able to trigger lazy to update.
-#
+nvim_colorscheme_path="$HOME/.config/nvim/lua/plugins/colorscheme.lua"
+nvim_profile_folder=$(realpath "$script_directory/../profiles/nvim")
+cat "$nvim_profile_folder/$PROFILE.lua" >"$nvim_colorscheme_path"
+
 # BAT has a command line. We should be able to do a copy
 #
 # Waybar supports a stylesheet that we should be able to copy in and out
