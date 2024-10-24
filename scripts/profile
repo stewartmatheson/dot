@@ -19,11 +19,11 @@ nvim-gruvbox() {
   # own package manager. We might be able to trigger lazy to update.
   nvim_colorscheme_path="$HOME/.config/nvim/lua/plugins/colorscheme.lua"
   nvim_profile_folder=$(realpath "$script_directory/../profiles/nvim")
-  cat "$nvim_profile_folder/colorscheme.gruvbox.lua" >"$nvim_colorscheme_path"
+  cat "$nvim_profile_folder/colorscheme.gruvbox-dark.lua" >"$nvim_colorscheme_path"
 
   # Lualine also has a color scheme. We can set that here
   nvim_lualine_path="$HOME/.config/nvim/lua/plugins/lualine.lua"
-  cat "$nvim_profile_folder/lualine.gruvbox.lua" >"$nvim_lualine_path"
+  cat "$nvim_profile_folder/lualine.gruvbox-dark.lua" >"$nvim_lualine_path"
 }
 
 tmux-gruvbox() {
