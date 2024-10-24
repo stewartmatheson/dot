@@ -22,6 +22,8 @@ nvim-gruvbox() {
   cat "$nvim_profile_folder/colorscheme.gruvbox.lua" >"$nvim_colorscheme_path"
 
   # Lualine also has a color scheme. We can set that here
+  nvim_lualine_path="$HOME/.config/nvim/lua/plugins/lualine.lua"
+  cat "$nvim_profile_folder/lualine.gruvbox.lua" >"$nvim_lualine_path"
 }
 
 tmux-gruvbox() {
@@ -61,7 +63,4 @@ gruvbox() {
   hyprland-gruvbox
 }
 
-# if profile is set to GRUVBOX
-if [ "$PROFILE" = "gruvbox" ]; then
-  gruvbox
-fi
+gruvbox
