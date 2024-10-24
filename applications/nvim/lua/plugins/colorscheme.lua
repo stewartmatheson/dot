@@ -1,11 +1,7 @@
 return {
-  "catppuccin/nvim",
-  name = "catppuccin",
+  "ellisonleao/gruvbox.nvim",
   priority = 1000,
   config = function()
-    require("catppuccin").setup({
-      transparent_background = true,
-    })
-    vim.cmd.colorscheme "catppuccin"
-  end,
+    vim.cmd.colorscheme "gruvbox"
+  end
 }
