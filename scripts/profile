@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# The name of the profile to use
-PROFILE="gruvbox"
-
 # This script allows for changing and definig color profiles. It supports
 # setting a color profile as well as clearing the current profile and resetting
 # back to defaults.
@@ -22,7 +19,7 @@ nvim-gruvbox() {
   # own package manager. We might be able to trigger lazy to update.
   nvim_colorscheme_path="$HOME/.config/nvim/lua/plugins/colorscheme.lua"
   nvim_profile_folder=$(realpath "$script_directory/../profiles/nvim")
-  cat "$nvim_profile_folder/$PROFILE.lua" >"$nvim_colorscheme_path"
+  cat "$nvim_profile_folder/colorscheme.gruvbox.lua" >"$nvim_colorscheme_path"
 
   # Lualine also has a color scheme. We can set that here
 }
