@@ -10,25 +10,61 @@ PROFILE="gruvbox"
 # Get current script directory
 script_directory="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
-# Build foot configuration and output it to the correct location
-source "$script_directory/profile-foot"
-foot_config_path="$HOME/.config/foot/foot.ini"
-foot-profile "base" "comic-shans" "gruvbox-dark" >"$foot_config_path"
+foot-gruvbox() {
+  # Build foot configuration and output it to the correct location
+  source "$script_directory/profile-foot"
+  foot_config_path="$HOME/.config/foot/foot.ini"
+  foot-profile "comic-shans" "base" "gruvbox-dark" >"$foot_config_path"
+}
 
-# Tmux supports plugins for color schemes. Not sure how we can choose this from
-# the CLI
-#
-# Nvim same as tmux will have color config via a plugin that is installed by its
-# own package manager. We might be able to trigger lazy to update.
-nvim_colorscheme_path="$HOME/.config/nvim/lua/plugins/colorscheme.lua"
-nvim_profile_folder=$(realpath "$script_directory/../profiles/nvim")
-cat "$nvim_profile_folder/$PROFILE.lua" >"$nvim_colorscheme_path"
+nvim-gruvbox() {
+  # Nvim same as tmux will have color config via a plugin that is installed by its
+  # own package manager. We might be able to trigger lazy to update.
+  nvim_colorscheme_path="$HOME/.config/nvim/lua/plugins/colorscheme.lua"
+  nvim_profile_folder=$(realpath "$script_directory/../profiles/nvim")
+  cat "$nvim_profile_folder/$PROFILE.lua" >"$nvim_colorscheme_path"
 
-# BAT has a command line. We should be able to do a copy
-#
-# Waybar supports a stylesheet that we should be able to copy in and out
-#
-# Wofi supports theme files and should be easy
-#
-# Hyprland is currently not part of the configuration so we should bring that
-# in to this project first
+  # Lualine also has a color scheme. We can set that here
+}
+
+tmux-gruvbox() {
+  # Tmux supports plugins for color schemes. Not sure how we can choose this from
+  # the CLI
+  true
+}
+
+bat-gruvbox() {
+  # BAT has a command line. We should be able to do a copy
+  true
+}
+
+waybar-gruvbox() {
+  # Waybar supports a stylesheet that we should be able to copy in and out
+  true
+}
+
+wofi-gruvbox() {
+  # Wofi supports theme files and should be easy
+  true
+}
+
+hyprland-gruvbox() {
+  # Hyprland is currently not part of the configuration so we should bring that
+  # in to this project first
+  true
+}
+
+gruvbox() {
+  foot-gruvbox
+  nvim-gruvbox
+  tmux-gruvbox
+  bat-gruvbox
+  waybar-gruvbox
+  wofi-gruvbox
+  hyprland-gruvbox
+}
+
+# if profile is set to GRUVBOX
+if [ "$PROFILE" = "gruvbox" ]; then
+  gruvbox
+fi
