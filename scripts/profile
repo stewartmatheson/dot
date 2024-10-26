@@ -11,7 +11,7 @@ foot-gruvbox() {
   # Build foot configuration and output it to the correct location
   source "$script_directory/profile-foot"
   foot_config_path="$HOME/.config/foot/foot.ini"
-  foot-profile "comic-shans" "base" "gruvbox-dark" >"$foot_config_path"
+  foot-profile "caskaydia" "gruvbox-dark" >"$foot_config_path"
 }
 
 nvim-gruvbox() {
