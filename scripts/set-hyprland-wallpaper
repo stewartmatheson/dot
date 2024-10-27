@@ -21,12 +21,14 @@ if [ -z "$1" ]; then
 fi
 
 # Check if the provided argument is a directory
-if [ -d "$1" ]; then
-  while true; do
-    file=$(find "$1" -type f | shuf -n 1)
-    change_wallpaper "$file"
-    sleep 300
-  done
-else
-  change_wallpaper "$1"
-fi
+#if [ -d "$1" ]; then
+#  while true; do
+#    file=$(find "$1" -type f | shuf -n 1)
+#    change_wallpaper "$file"
+#    sleep 300
+#  done
+#else
+#  change_wallpaper "$1"
+#fi
+
+change_wallpaper "$1"

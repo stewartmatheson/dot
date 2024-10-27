@@ -31,15 +31,8 @@ Run setup.
  * A nerd font patched font.
 
 ## TODO  
- * Setup should do a git submodule init
- * Setup a health check function that will test for all requirements and fail
-   if they are not met.
- * Figure out how to package up deps in my paths. We should remove that from
-   this configuration
- * Start building up a non nvim configuration
- * Move fzf inline with a manual checkout
- * Attempt to rustup during install process.
- * Understand what should live in zshprofile and zshrc
+ * Make foot profile more simple by swapping out a single file and not building
+   it from a set of files which is making things more complex than they need to be
  
 ## Credit Rwxrob
 This project is inspired by rwxrob's dot files.  Check him out on twitch 
