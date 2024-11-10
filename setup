@@ -20,7 +20,8 @@ ln -sf "$PWD/foot" "$HOME/.config/foot"
 ln -sf "$PWD/rofi" "$HOME/.config/rofi"
 ln -sf "$PWD/swayosd" "$HOME/.config/swayosd"
 
-ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
+# Don't link tmux. It will come from the profile
+# ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$PWD/tmux" "$HOME/.tmux"
 # ln -sf "$PWD/rbenv" "$HOME/.rbenv"
 
@@ -42,5 +43,9 @@ if ! command -v "nvim" &>/dev/null; then
   rm "$download_dir/$download_filename"
 fi
 
+# Load the profile
+profile "gruvbox-dark"
+
+# Install the plugins
 nvim --headless "+Lazy! sync" +qa
 nvim --headless "+TSUpdate" +qa

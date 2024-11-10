@@ -19,7 +19,7 @@ fi
 foot() {
   foot_config_path="$HOME/.config/foot/foot.ini"
   foot_profile_folder=$(realpath "$script_directory/../profiles/foot")
-  cat "$foot_profile_folder/foot.$profile.ini" >"$foot_config_path"
+  ln -sf "$foot_profile_folder/foot.$profile.ini" "$foot_config_path"
 }
 
 nvim() {
@@ -27,11 +27,11 @@ nvim() {
   # own package manager. We might be able to trigger lazy to update.
   nvim_profile_folder=$(realpath "$script_directory/../profiles/nvim")
   nvim_colorscheme_path="$HOME/.config/nvim/lua/plugins/colorscheme.lua"
-  cat "$nvim_profile_folder/colorscheme.$profile.lua" >"$nvim_colorscheme_path"
+  ln -sf "$nvim_profile_folder/colorscheme.$profile.lua" "$nvim_colorscheme_path"
 
   # Lualine also has a color scheme. We can set that here
   nvim_lualine_path="$HOME/.config/nvim/lua/plugins/lualine.lua"
-  cat "$nvim_profile_folder/lualine.$profile.lua" >"$nvim_lualine_path"
+  ln -sf "$nvim_profile_folder/lualine.$profile.lua" "$nvim_lualine_path"
 }
 
 tmux() {
@@ -39,7 +39,7 @@ tmux() {
   # the CLI
   tmux_profile_folder=$(realpath "$script_directory/../profiles/tmux")
   tmux_conf_path="$HOME/.tmux.conf"
-  cat "$tmux_profile_folder/tmux.$profile.conf" >"$tmux_conf_path"
+  ln -sf "$tmux_profile_folder/tmux.$profile.conf" "$tmux_conf_path"
 }
 
 bat() {
