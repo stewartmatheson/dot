@@ -1,5 +1,4 @@
-tmux/plugins
-nvim/lazy-lock.json
+applications/nvim/lazy-lock.json
 
 # Ignore config files
 applications/tmux/tmux/plugins
