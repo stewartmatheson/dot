@@ -1,3 +1,11 @@
 tmux/plugins
 nvim/lazy-lock.json
+
+# Ignore config files
 applications/tmux/tmux/plugins
+applications/foot/foot.ini
+applications/nvim/lazy-lock.json
+applications/nvim/lua/plugins/colorscheme.lua
+applications/nvim/lua/plugins/lualine.lua
+applications/tmux/tmux.conf
+
