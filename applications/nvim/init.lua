@@ -17,6 +17,7 @@ vim.g.mapleader = " "
 vim.g.updatetime = 100
 vim.g.cursorhold_updatetime = 100
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 vim.diagnostic.config({ virtual_text = false })
 
